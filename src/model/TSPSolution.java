@@ -88,7 +88,6 @@ public class TSPSolution implements Cloneable {
 		StringBuffer str = new StringBuffer();
 		for (int i : tour)
 			str.append(i+"\t");
-		str.append("\n");
 		return str.toString();
 	}
 

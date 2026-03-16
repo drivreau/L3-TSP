@@ -18,41 +18,41 @@ public class TestNaturalOrder {
 
 	public static void main(String[] args) throws Exception {
 		
-		// On crée le solver
+		// On crï¿½e le solver
 		TSPSolver solver = new greedy.NaturalOrder();
 		
-		// On crée la fonction objectif retenue (coût total)
+		// On crï¿½e la fonction objectif retenue (coï¿½t total)
 		TSPObjective objective = new TSPTotalCost();
 		
 		
-		// On crée la fabrique à instance pour des TSP définit par des matrices de distance
+		// On crï¿½e la fabrique ï¿½ instance pour des TSP dï¿½finit par des matrices de distance
 		TSPInstanceFactory matrixFactory = new MatrixTSPFactory();
 		
 		
-		// On crée une instance à partir du fichier small5.tsp
+		// On crï¿½e une instance ï¿½ partir du fichier small5.tsp
 		TSPInstance instance = matrixFactory.getFromFile("data/symmetric/small5.tsp");
 		
-		// Les variables start et end permettent de calculer le temps écoulé entre le top départ et la fin d'exécution en ms.
+		// Les variables start et end permettent de calculer le temps ï¿½coulï¿½ entre le top dï¿½part et la fin d'exï¿½cution en ms.
 		long start, end;
 		
 		start = System.currentTimeMillis();
 		
-		// On exécute le solveur sur l'instance pour l'objectif donné
+		// On exï¿½cute le solveur sur l'instance pour l'objectif donnï¿½
 		TSPSolution solution = solver.getSolution(instance,objective);
 		
 		end = System.currentTimeMillis();
 		
-		// On vérifie que la solution est valide
+		// On vï¿½rifie que la solution est valide
 		boolean solValide = TSPSolutionChecker.isValid(solution, instance);
 
 		if (!solValide) {
 				System.out.println( "Attention : solution non valide !!!" );
 		}
 		else { 
-			System.out.println( "Solution : "+solution.toString()+ ", coût : "+objective.evaluate(solution, instance) );
+			System.out.println( "Solution : "+solution.toString()+ ", coÃ»t : "+objective.evaluate(solution, instance) );
 		}			
 			
-		System.out.println( "Temps écoulé : " + (end-start) +" ms.");
+		System.out.println( "Temps Ã©coulÃ© : " + (end-start) +" ms.");
 		
 	}
 
