@@ -9,7 +9,7 @@ import model.TSPSolution;
  * @author David Rivreau
  */
 
-class TwoOptMove implements TSPMove {
+public class TwoOptMove implements TSPMove {
 
 	/**
 	 * First edge starting position in permutation.
